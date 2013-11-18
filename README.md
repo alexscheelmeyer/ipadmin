@@ -1,0 +1,1 @@
+For easy admin area development with express and footpl.

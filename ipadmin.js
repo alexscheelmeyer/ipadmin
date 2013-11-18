@@ -2,8 +2,9 @@ var passport=require('passport');
 var LocalStrategy=require('passport-local').Strategy;
 var flash=require('connect-flash');
 
+var IPAdmin=module.exports=function(){}
 
-var IPAdmin=module.exports=function(foo,users){
+IPAdmin.prototype.init=function(foo,users){
 	foo.addImportPath(__dirname+'/viewmacros');
 
 	passport.serializeUser(function(user,done){

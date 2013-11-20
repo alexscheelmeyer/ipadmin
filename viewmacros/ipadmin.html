@@ -1,4 +1,21 @@
 
+{% macro layout(menu,content) %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+	  <ul class="nav nav-pills nav-stacked">
+		<li class="nav-header">Admin</li>
+		{# menu #}
+		<li><a href="/admin/logout">Logout</a></li>
+	  </ul>
+    </div>
+    <div class="col-md-10">
+	  {# content #}
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
 
 {% macro loginForm(showRememberMe) %}
 

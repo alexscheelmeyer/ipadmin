@@ -34,8 +34,9 @@ IPAdmin.prototype.init=function(foo,users){
 }
 
 
-IPAdmin.prototype.configureExpress=function(express,app){
-    app.use(express.bodyParser());
+IPAdmin.prototype.configureExpress=function(express,app,bodyParserOptions){
+	if(bodyParserOptions===undefined)bodyParserOptions={};
+    app.use(express.bodyParser(bodyParserOptions));
 	app.use(express.cookieParser());
 	app.use(express.session({secret:'keyboard cat'}));
     app.use(passport.initialize());

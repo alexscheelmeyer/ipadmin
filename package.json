@@ -2,13 +2,18 @@
   "author": "Alex Scheel Meyer",
   "name": "ipadmin",
   "description": "for easy admin area setup",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "repository": {
     "type": "git",
     "url": "git://github.com/alexscheelmeyer/ipadmin.git"
   },
   "main": "ipadmin.js",
-  "dependencies": {},
+  "dependencies": {
+    "footpl": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "connect-flash": "*"
+  },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {

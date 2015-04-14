@@ -2,7 +2,7 @@
   "author": "Alex Scheel Meyer",
   "name": "ipadmin",
   "description": "for easy admin area setup",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "repository": {
     "type": "git",
     "url": "git://github.com/alexscheelmeyer/ipadmin.git"

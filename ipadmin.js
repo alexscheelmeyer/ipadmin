@@ -1,6 +1,7 @@
 var passport=require('passport');
 var LocalStrategy=require('passport-local').Strategy;
 var flash=require('connect-flash');
+var bodyParser=require('body-parser');
 
 var IPAdmin=module.exports=function(){}
 
@@ -36,12 +37,13 @@ IPAdmin.prototype.init=function(foo,users){
 
 IPAdmin.prototype.configureExpress=function(express,app,bodyParserOptions){
 	if(bodyParserOptions===undefined)bodyParserOptions={};
-    app.use(express.bodyParser(bodyParserOptions));
+    app.use(bodyParser.json());                        
+    app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(express.cookieParser());
 	app.use(express.session({secret:'keyboard cat'}));
-    app.use(passport.initialize());
-    app.use(passport.session());
-    app.use(flash());
+	app.use(passport.initialize());
+	app.use(passport.session());
+	app.use(flash());
 }
 
 IPAdmin.prototype.setupRoutes=function(app){

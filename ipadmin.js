@@ -2,6 +2,7 @@ var passport=require('passport');
 var LocalStrategy=require('passport-local').Strategy;
 var flash=require('connect-flash');
 var bodyParser=require('body-parser');
+var cookieParser=require('cookie-parser');
 
 var IPAdmin=module.exports=function(){}
 
@@ -39,7 +40,7 @@ IPAdmin.prototype.configureExpress=function(express,app,bodyParserOptions){
 	if(bodyParserOptions===undefined)bodyParserOptions={};
     app.use(bodyParser.json());                        
     app.use(bodyParser.urlencoded({ extended: true }));
-	app.use(express.cookieParser());
+	app.use(cookieParser());
 	app.use(express.session({secret:'keyboard cat'}));
 	app.use(passport.initialize());
 	app.use(passport.session());

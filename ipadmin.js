@@ -39,8 +39,9 @@ IPAdmin.prototype.init=function(foo,users){
 
 IPAdmin.prototype.configureExpress=function(express,app,bodyParserOptions){
 	if(bodyParserOptions===undefined)bodyParserOptions={};
-    app.use(bodyParser.json());                        
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json(bodyParserOptions));                        
+	bodyParserOptions.extended=true;
+    app.use(bodyParser.urlencoded(bodyParserOptions));
 	app.use(cookieParser());
 	app.use(session({secret:'keyboard cat'}));
 	app.use(passport.initialize());

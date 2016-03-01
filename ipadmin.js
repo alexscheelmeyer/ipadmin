@@ -43,7 +43,7 @@ IPAdmin.prototype.configureExpress=function(express,app,bodyParserOptions){
 	bodyParserOptions.extended=true;
     app.use(bodyParser.urlencoded(bodyParserOptions));
 	app.use(cookieParser());
-	app.use(session({secret:'keyboard cat'}));
+	app.use(session({secret:'keyboard cat',resave:true,saveUninitialized:true}));
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(flash());
